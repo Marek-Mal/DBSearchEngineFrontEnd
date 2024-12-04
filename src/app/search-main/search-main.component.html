@@ -1,0 +1,25 @@
+<!-- <button class="button-mystyle" (click)="navigateToBasket()"><fa-icon [icon]="buy_icon"></fa-icon></button> -->
+<div class="maintext">
+    <h1>Database</h1>
+</div>
+<div class="searchbar">
+    <div>
+        <input 
+            class="searchFormsub1" 
+            type="text" 
+            placeholder="Search your data"
+            [(ngModel)]="searchTerm"
+            >
+        <input 
+            class="searchFormsub2" 
+            type="submit" 
+            value="Search"
+            (click)="searchWeb(searchTerm)"
+            >
+    </div>
+</div>
+<div class="margin"></div>
+<div *ngIf="isTrue" class="search">
+    <app-search-results [searchTerm]="searchQuery" [isEngine]="isEngine" [cID]="component_id"></app-search-results>
+</div>
+<app-footer></app-footer>

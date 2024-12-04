@@ -1,0 +1,123 @@
+<ng-template #modalContent let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Success!</h4>
+	</div>
+	<div class="modal-body">
+		<p>Your Product Has Successfully Been Added To Your Basket</p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="openBasket()" (click)="modal.close('Close click')">Open Your Basket</button>
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
+
+<ng-template #imageContent let-modal>
+	<div class="modal-body">
+		<img class="imageExpanded" src="{{ currentImage }}" alt="image">
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
+
+<ngb-accordion class="accordion" ngbAccordion [closeOthers]="true">
+	@for (item of items; track item) {
+		<div ngbAccordionItem [collapsed]="true">
+			<h2 ngbAccordionHeader>
+				<button ngbAccordionButton>Name: {{ item.component_name }} | ID: {{ item.id }}
+				</button>
+			</h2>
+			<div class="mymodal" ngbAccordionCollapse>
+				<div class="insideAccolyte" ngbAccordionBody [ngClass]="'custom-panel'">
+					<ng-template>
+						<div class="contentfull">
+							<button class="button-mystyle-Overriten" (click)="openXl(imageContent, item.image)">
+								<img class="image button-image" src="http://localhost:8000{{ item.image }}" alt="image">
+							</button>
+							<!-- <img *ngIf="!engine_filter_true"class="image" src="{{ item.image }}" alt="image"> -->
+							<div class="center" style="color: #53585A;">(Click On Picture To Expand)</div>
+							 <table class="myTable">
+								<thead>
+									<th>Drawing Number</th>
+									<th>Component Name</th>
+									<th>Engine Version</th>
+									<th>Page In PDF file</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>{{ item.id }}</td>
+										<td>{{ item.component_name }}</td>
+										<td>{{ item.engine }}</td>
+										<td>{{ item.pdf_page }}</td>
+									</tr>
+								</tbody>
+							 </table>
+							<!-- <div class="center">
+								<p style="color: rgb(133, 133, 133);">(Click On Image To Expand)</p>
+								<p>Drawing Number: {{ item.id }}</p>
+								<p>Component Name: {{ item.component_name }}</p>
+								<p>Engine Version: {{ item.engine }}</p>
+								<p>Page In PDF file: {{ item.pdf_page }}</p>
+							</div> -->
+						</div>
+                        <table>
+							<thead>
+								<th>ID</th>
+								<th>Part Name</th>
+								<th>Price</th>
+								<th>Availability</th>
+							</thead>
+							<tbody>
+								<tr *ngFor="let dataItem of Spare_Parts_Contents">
+									@if (dataItem.component_id == item.id) {
+										@if (searchTerm == dataItem.part_id) {
+											<td style="text-decoration: underline; font-weight: bold;">
+												{{ dataItem.part_id }}
+											</td>
+											<td style="text-decoration: underline; font-weight: bold;">
+												{{ dataItem.part_name }}
+											</td>
+											<td style="text-decoration: underline; font-weight: bold;">
+												{{ dataItem.price }}
+											</td>
+											<td>
+												@if (dataItem.isAvalable == 'Currently in Storage') {
+													<!-- <a routerLink="Basket">{{ dataItem.isAvalable }} <fa-icon [icon]="buy_icon"></fa-icon></a>  -->
+													<button class="button-mystyle onIdPick" (click)="addToStorage(dataItem)" (click)="openSm(modalContent)">{{ dataItem.isAvalable }} <fa-icon [icon]="buy_icon"></fa-icon></button>
+													
+												} @else {
+													{{ dataItem.isAvalable }}
+												}
+											</td>
+										} @else{
+											<td>
+												{{ dataItem.part_id }}
+											</td>
+											<td>
+												{{ dataItem.part_name }}
+											</td>
+											<td>
+												{{ dataItem.price }}
+											</td>
+											<td>
+												@if (dataItem.isAvalable == 'Currently in Storage') {
+													<!-- <a routerLink="Basket">{{ dataItem.isAvalable }} <fa-icon [icon]="buy_icon"></fa-icon></a> -->
+													<button class="button-mystyle" (click)="addToStorage(dataItem)" (click)="openSm(modalContent)">{{ dataItem.isAvalable }} <fa-icon [icon]="buy_icon"></fa-icon></button>
+												} @else {
+													{{ dataItem.isAvalable }}
+												}
+											</td>
+										}
+									}
+								</tr>
+							</tbody>
+                        </table>
+						<!-- <div class="pagination">
+							<ngb-pagination [collectionSize]="pageSize" [(page)]="page" aria-label="Default pagination" (pageChange)="spare_part_current_accordian(item.id)" />
+						</div> -->
+					</ng-template>
+				</div>
+			</div>
+		</div>
+	}
+</ngb-accordion>

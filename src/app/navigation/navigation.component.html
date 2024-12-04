@@ -1,0 +1,39 @@
+<div class="all">
+    <div class="header">
+        <div class="image">
+            <img src="{{photoUrl}}" alt="">
+        </div>
+        <div class="navigation-container">
+            <div *ngIf="isHome" class="navigation">
+                <div ngbDropdown>
+                    <button type="button" class="btn btn-outline-primary hovered" id="dropdownBasic1" ngbDropdownToggle>
+                        <span>Wartsila RTA96C-B</span>
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem >Wartsila RTA96C-B</button>
+                        <button ngbDropdownItem [disabled]="true">Wartsila RTA96C-C</button>
+                        <button ngbDropdownItem [disabled]="true">Wartsila RTA96C-D</button>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!isHome" class="navigation">
+                <div ngbDropdown>
+                    <button type="button" (click)="clickHome()" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                        <span>Wartsila RTA96C-B</span>
+                    </button>
+                </div>
+            </div>
+            <div *ngIf="isBasket" class="navigation2 basket">
+                <button class="hovered navButton" (click)="clickBasket()">
+                    <span>Basket</span>
+                </button>
+            </div>
+            <div *ngIf="!isBasket" class="navigation2 basket">
+                <button class='navButton' (click)="clickBasket()">
+                    <span>Basket</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="overflow:auto; display: none;"></div>

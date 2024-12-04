@@ -1,0 +1,93 @@
+* {
+    margin-top: 1%;
+    background-color: white;
+}
+
+img {
+    width: 599px;
+    height: 87px;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.navigation-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.navigation, .navigation2 {
+    color: #53585A;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-thickness: 10px;
+    text-decoration-color: #dedede;
+    margin-top: 0; /* Removed to align with the image */
+}
+
+.navigation2 {
+    margin-left: 10%;
+    margin-right: 50%;
+    margin-top: 10px;
+}
+
+span:hover {
+    color: #015CB9;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 10px;
+    cursor: pointer;
+}
+
+.hovered {
+    color: #015CB9;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 10px;
+}
+
+span {
+    font-size: 40px;
+}
+
+.navButton {
+    border: none;
+}
+
+.display {
+    display: block !important;
+}
+
+button {
+    border: none;
+    color: #53585A;
+}
+
+button:hover {
+    color: none;
+    background-color: white;
+}
+
+.btn-outline-primary:hover {
+    color: #015CB9;
+}
+
+.btn-check:checked + .btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check) + .btn:active {
+    color: #015CB9;
+    background-color: white;
+    border-color: white;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 10px;
+}

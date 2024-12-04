@@ -1,0 +1,141 @@
+<ng-template #modalBought let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Success!</h4>
+	</div>
+	<div class="modal-body">
+		<p>Products With Code numbers: 
+            @if (isUndefiend(ObjectsDeleted)) {
+                {{ ObjectsDeleted }}
+            }
+        </p>
+		<p>Were Successfully Ordered</p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
+<div class="information">
+    <p>To:</p>
+    <p><b>Wartsila Switzerland Ltd.</b></p>
+    <p>Service</p>
+    <p>P.O Box 414</p>
+    <p>CH-8401 Winterthur</p>
+    <p>Tel.: +41 52 262 44 11</p>
+    <p>Tel.: +41 52 262 80 10 Technical Support (24/7)</p>
+    <p>Tel.: +41 79 671 87 67 Spare Parts Support (24/7)</p>
+    <p>Fax: +41 52 262 07 22</p>
+    <p>E-Mail: service.sales.ch&#64;wartsila.com</p>
+</div>
+<div class="myFormCheck">
+    <div class="form-check">
+        <input class="form-check-input checkmark" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            Enquiry for Diesel Engine Spare Parts
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input checkmark" type="checkbox" value="" id="flexCheckChecked" checked>
+        <label class="form-check-label" for="flexCheckChecked">
+            Order for Diesel Engine Spare Parts
+        </label>
+    </div>
+</div>
+<div class="row g-3">
+    <div class="col-auto">
+      <label for="inputPassword6" class="col-form-label">Contact Person</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" id="inputPassword6" class="form-control" placeholder="State Your Name" aria-describedby="passwordHelpInline">
+    </div>
+</div><br>
+<div class="row g-3">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Installation / Ships name" aria-label="Installation / Ships name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Engine Type / Number" aria-label="Engine Type / Number">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Tender Reference No." aria-label="Tender Reference No.">
+    </div>
+</div><br>
+<div class="row g-3">
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Our Reference No." aria-label="Our Reference No.">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Latest Date Of Arribal At Delivery Adress" aria-label="Latest Date Of Arribal">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Requested Means Of Transportation" aria-label="Requested Means Of Transportation">
+      </div>
+</div>
+
+<div class="mytable">
+    <table>
+        <thead>
+            <tr>
+                <th>Quantity</th>
+                <th>Code Number</th>
+                <th>Description</th>
+                <th>Currency</th>
+                <th>Price</th>
+                <th>Remove From Basket</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (dataItem of basket_contents; track dataItem) {
+                <tr class="onHover">
+                    <td>
+                        <input type="text" class="myInput" placeholder="{{dataItem.Quantity}}" [(ngModel)]="dataItem.Quantity"> <button type="button" class="btn btn-outline-primary saveButton" (click)="trackByIndex(dataItem)">Save</button>
+                    </td>
+                    <td>
+                        {{dataItem.CodeNumber}}
+                    </td>
+                    <td>
+                        {{dataItem.Description}}
+                    </td>
+                    <td>
+                        <div>
+                            <div>
+                                <div ngbDropdown>
+                                    <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                                        Select Currency
+                                    </button>
+                                    <div ngbDropdownMenu class="myCustomBackground" aria-labelledby="dropdownBasic1">
+                                        <button ngbDropdownItem>EUR</button>
+                                        <button ngbDropdownItem>USD</button>
+                                        <button ngbDropdownItem>PLN</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        {{dataItem.Price}}
+                    </td>
+                    <td>
+                        <button class="button-mystyle" (click)="removeItem(dataItem.CodeNumber)"><fa-icon [icon]="TrashIcon"></fa-icon></button>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Delivery address:</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="(pls also mention phone/fax no. and contact person)" rows="3"></textarea>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlTextarea2" class="form-label">Remarks: </label>
+    <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlTextarea3" class="form-label">Involcing address: </label>
+    <textarea class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+</div>
+
+<div class="finalbuybutton">
+    <button type="button" class="btn btn-primary btn-lg" (click)="openSm(modalBought)">Buy</button>
+</div>
+<app-footer></app-footer>

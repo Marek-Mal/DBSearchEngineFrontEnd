@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Jaro';
+    src: url('./assets/Jaro/Jaro-Regular-VariableFont_opsz.ttf') format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Karla';
+    src: url('./assets/Karla/Karla-VariableFont_wght.ttf') format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}

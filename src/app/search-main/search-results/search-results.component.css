@@ -1,0 +1,240 @@
+::ng-deep .accordion .accordion-item .accordion-header .accordion-button::after {
+    display: none;
+}
+
+* {
+  background-color: #ffffff;
+}
+
+
+/* -----HEADER----- */
+.accordion .accordion-item .accordion-header {
+    background-color: #ffffff;  /* Change background color */
+    color: #015CB9;  /* Change text color */
+    font-weight: bold;  /* Change font style */
+    border: 5px solid #015CB9;
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* -----CONTENT ACCORDION----- */
+.accordion .accordion-item .accordion-collapse {
+    background-color: #ffffff;  /* Change background color */
+    padding: 10px;  /* Adjust padding */
+    border: 5px solid #015CB9;
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-top: -1%;
+    margin-bottom: 5%;
+}
+
+/* -----ACCORDION OPENED----- */
+.accordion .accordion-item.show .accordion-header {
+    background-color: #E8E8E8;  /* Background color when opened */
+}
+
+/* -----ACCORDION ICON----- */
+::ng-deep .accordion .accordion-item .accordion-header .accordion-button::after {
+    font-size: 18px;  /* Adjust icon size */
+    color: #015CB9 !important;  /* Change icon color to whitesmoke */
+}
+
+/* -----CUSTOM PANEL----- */
+.custom-panel {
+    background-color: #ffffff;
+    color: #015CB9;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+/* -----REMOVE BORDERS AND CUSTOMIZE BUTTON----- */
+.accordion .accordion-item .accordion-header .accordion-button {
+    background-color: whitesmoke !important; /* Dark grey color for the default state */
+    color: #015CB9 !important; /* whitesmoke text color */
+    border: none !important; /* Forcefully remove borders */
+    outline: none !important; /* Remove focus outline */
+    box-shadow: none !important; /* Remove any shadow */
+    transition: background-color 0.3s ease !important; /* Smooth transition effect */
+    
+    margin: auto; /* Center the button */
+}
+
+/* Ensure no borders and customize the button on hover */
+.accordion .accordion-item .accordion-header .accordion-button:hover {
+    background-color: #f0f0f0 !important; /* Darker grey color on hover */
+    color: #015CB9 !important; /* whitesmoke text color */
+    border: none !important; /* Ensure no borders */
+    box-shadow: none !important; /* Ensure no shadow */
+    transition: background-color 0.3s ease !important; /* Smooth transition effect */
+}
+
+/* Ensure no borders and customize the button on focus */
+.accordion .accordion-item .accordion-header .accordion-button:focus {
+    background-color: #f0f0f0 !important; /* Darker grey color on focus */
+    color: #015CB9 !important; /* whitesmoke text color */
+    outline: none !important; /* Remove focus outline */
+    border: none !important; /* Remove border on focus */
+    box-shadow: none !important; /* Remove any box-shadow */
+    transition: background-color 0.3s ease !important; /* Smooth transition effect */
+}
+
+/* Optional: Style for the expanded accordion button */
+.accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+    background-color: #f0f0f0 !important; /* Dark grey color when expanded */
+    color: #015CB9 !important;
+    border: none !important; /* Ensure no borders */
+}
+
+/* Apply a background color to the individual accordion items */
+.accordion .accordion-item {
+    background-color: #ffffff; /* Match the background to the button */
+    border: none !important; /* Remove borders */
+}
+
+/* Apply a background color to the accordion collapse (expanded content) */
+.accordion .accordion-item .accordion-collapse {
+    background-color: #ffffff;  /* Content background */
+}
+
+/* Ensure the accordion button's icon (via ::after) changes color */
+.accordion .accordion-item .accordion-header .accordion-button::after {
+    text-shadow: 1px 1px 1px whitesmoke;
+    color: white;
+}
+
+/* TABLE STYLES */
+table {
+    border: 1px solid #015CB9;
+    text-align: center;
+    width: 40%;
+    border-collapse: collapse;
+    margin-bottom: 2.5%;
+  }
+  table td, table th {
+    border: 1px solid #015CB9;
+    padding: 3px 2px;
+    background-color: whitesmoke;
+  }
+  table tr:nth-child(even) {
+    background: #D0E4F5;
+  }
+  table thead {
+      border-bottom: 2px solid #015CB9;
+
+  }
+  table thead th {
+    font-weight: bold;
+    border-left: 2px solid #015CB9;
+  }
+  table thead th:first-child {
+    border-left: none;
+  }
+
+/* MYTABLE STYLES */
+.myTable {
+  margin-top: 2%;
+    border: 1px solid #015CB9;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .myTable td, .myTable th {
+    border: 1px solid #015CB9;
+    padding: 3px 2px;
+    background-color: whitesmoke;
+  }
+  .myTable tr:nth-child(even) {
+    background: #D0E4F5;
+  }
+  .myTable thead {
+      border-bottom: 2px solid #015CB9;
+
+  }
+  .myTable thead th {
+    font-weight: bold;
+    border-left: 2px solid #015CB9;
+  }
+  .myTable thead th:first-child {
+    border-left: none;
+  }
+
+.contentfull {
+  float: left;
+  width: 59%;
+  text-align: center;
+  padding-right: 25%;
+  padding-top: 1%;
+}
+
+.image {
+  width: 255px;
+  height: 330px;
+  margin-bottom: 5%;
+  border-color: #015CB9;
+  border-radius: 20px;
+  border-width: 5px;
+  border-style: outset;
+}
+
+.pagination {
+  float: right;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.modal-header {
+  color: #015CB9;
+  background-color: #FFFFFF;
+}
+
+.modal-body {
+  color: #015CB9;
+  background-color: #FFFFFF;
+  margin-left: 0.5%;
+}
+
+.modal-footer {
+  background-color: #FFFFFF;
+  color: #015CB9;
+  border-width: 5px;
+}
+
+.modal-footer button {
+  background-color: #015CB9;
+}
+
+.modal-footer button:hover {
+  background-color: #016fb9;
+}
+
+.button-mystyle {
+  text-decoration: underline;
+  color: #0119b9;
+  border: none;
+  background-color: whitesmoke;
+}
+
+.button-mystyle-Overriten {
+  text-decoration: underline;
+  color: #0119b9;
+  border: none;
+}
+
+.onIdPick {
+  text-decoration: underline; font-weight: bold;
+}
+
+.imageExpanded {
+  text-align: center;
+  margin-left: 2%;
+}
+
+.button-image:hover {
+  width: 265px;
+  height: 340px;
+}
