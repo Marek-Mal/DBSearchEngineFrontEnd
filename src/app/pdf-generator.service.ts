@@ -28,7 +28,7 @@ export class PdfGenerationService {
     doc.setFontSize(12);
     doc.text('Marine Diesel Service GmbH', 200, 20, { align: 'right' });
     doc.text('Weierstrasse 3, CH-8355 Aadorf, Switzerland', 200, 25, { align: 'right' });
-    doc.text('Phone: +41 52 303 12 00', 200, 30, { align: 'right' });
+    doc.text('Phone: +00 00 00 00 000', 200, 30, { align: 'right' });
     doc.text('Email: info@marine-diesel-service.com', 200, 35, { align: 'right' });
     doc.text('VAT: CHE-112.750.485 MWST', 200, 40, { align: 'right' });
     doc.text('EORI: DE696921249932558', 200, 45, { align: 'right' });
